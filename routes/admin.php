@@ -76,5 +76,5 @@ Route::middleware('auth:admins')->group(function () {
   Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
 
-  Route::resource('owner', OwnersController::class);
+  Route::resource('owners', OwnersController::class);
 });
