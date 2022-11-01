@@ -77,4 +77,9 @@ Route::middleware('auth:admins')->group(function () {
     ->name('logout');
 
   Route::resource('owners', OwnersController::class);
+
+  Route::prefix('expired-owners')->group(function () {
+    Route::get('index', [OwnersController::class, 'expiredOwnerIndex'])->name('expired-owners.index');
+    Route::post('destroy/{owner}', [OwnersController::class, 'expiredOwnerDestroy'])->name('expired-owners.destroy');
+  });
 });
