@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('admin.welcome');
-});
+// Route::get('/', function () {
+//   return view('admin.welcome');
+// });
 
 Route::get('/dashboard', function () {
   return view('admin.dashboard');
@@ -76,7 +76,7 @@ Route::middleware('auth:admins')->group(function () {
   Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
 
-  Route::resource('owners', OwnersController::class);
+  Route::resource('owners', OwnersController::class)->except(['show']);
 
   Route::prefix('expired-owners')->group(function () {
     Route::get('index', [OwnersController::class, 'expiredOwnerIndex'])->name('expired-owners.index');
