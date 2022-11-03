@@ -20,7 +20,7 @@
                                 <form action="{{ route('admin.owners.store') }}" method="POST">
                                     @csrf
                                     <div class="-m-2">
-                                        <div class="p-2 w-1/2 mx-auto">
+                                        <div cldass="p-2 w-1/2 mx-auto">
                                             <div class="relative">
                                                 <label for="name"
                                                     class="leading-7 text-sm text-gray-600">オーナー名</label>
