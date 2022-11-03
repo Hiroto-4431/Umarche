@@ -24,8 +24,8 @@
                                     {{ $shop->name }}
                                 </div>
                                 <div>
-                                    @if(@empty($shop->filename))
-                                        <img src="{{ asset('images/NoIMG.png') }}">
+                                    @if(empty($shop->filename))
+                                        <img src="{{ asset('images/NoIMG.png') }}" class="border">
                                     @else
                                         <img src="{{ asset('storage/shops/' . $shop->filename) }}">
                                     @endif
