@@ -10,6 +10,7 @@ use App\Http\Controllers\Owner\Auth\RegisteredUserController;
 use App\Http\Controllers\Owner\Auth\VerifyEmailController;
 use App\Http\Controllers\Owner\ShopController;
 use App\Http\Controllers\Owner\ImageController;
+use App\Http\Controllers\Owner\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -83,4 +84,6 @@ Route::middleware('auth:owners')->group(function () {
   });
 
   Route::resource('images', ImageController::class)->except(['show']);
+
+  Route::resource('products', ProductController::class)->except(['show']);
 });
